@@ -57,9 +57,9 @@ function difficulties() {
 difficulties()
 
 function drawPaddle() {
-    ctx.beginPath();
-    ctx.rect(paddle.pos_x, paddle.pos_y, paddle.width, paddle.height);
-    ctx.fillStyle = paddle.color;
+    ctx.beginPath()
+    ctx.rect(paddle.pos_x, paddle.pos_y, paddle.width, paddle.height)
+    ctx.fillStyle = paddle.color
     ctx.strokeStyle = paddle.strokeColor
     ctx.strokeRect(paddle.pos_x, paddle.pos_y, paddle.width, paddle.height)
     ctx.fill();
@@ -102,11 +102,11 @@ ball = {
 }
 
 function drawBall() {
-    ctx.beginPath();
-    ctx.arc(ball.pos_x, ball.pos_y, ball.radius, 0, Math.PI * 2);
-    ctx.fillStyle = ball.color;
-    ctx.fill();
-    ctx.closePath();
+    ctx.beginPath()
+    ctx.arc(ball.pos_x, ball.pos_y, ball.radius, 0, Math.PI * 2)
+    ctx.fillStyle = ball.color
+    ctx.fill()
+    ctx.closePath()
 }
 
 function level_up() {
@@ -125,18 +125,18 @@ function levels() {
             brick.row = 7
             brick.col = 6
             level_up()
-            break;
+            break
         case 3:
             brick.row = 5
             brick.col = 6
             level_up()
-            break;
+            break
         case 4:
             level_up()
-            break;
+            break
         case 5:
             level_up()
-            break;
+            break
     }
 }
 
@@ -201,7 +201,7 @@ brick = {
 let bricks = []
 function createBricks() {
     for (let row = 0; row < brick.row; row++) {
-        bricks[row] = [];
+        bricks[row] = []
         for (let col = 0; col < brick.column; col++) {
             x = Math.floor((Math.random() * 10) + 1)
             if (level == 2 || level == 4) {
@@ -334,10 +334,10 @@ function ballBrickCollision() {
 }
 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
+    var letters = '0123456789ABCDEF'
+    var color = '#'
     for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+        color += letters[Math.floor(Math.random() * 16)]
     }
     return color;
 }
@@ -365,30 +365,30 @@ function results() {
 }
 
 function currentLevel() {
-    ctx.font = "22px Arial ";
-    ctx.fillStyle = "#FFFFFF";
-    ctx.textAlign = "center";
-    ctx.fillText("Level: " + level, canvas.width/2, 20);
+    ctx.font = "22px Arial "
+    ctx.fillStyle = "#FFFFFF"
+    ctx.textAlign = "center"
+    ctx.fillText("Level: " + level, canvas.width/2, 20)
 }
 
 function drawLives() {
-    ctx.font = "22px Arial ";
-    ctx.fillStyle = "#FFFFFF";
-    ctx.textAlign = "right";
-    ctx.fillText("Lives: " + lives, canvas.width-5, 20);
+    ctx.font = "22px Arial "
+    ctx.fillStyle = "#FFFFFF"
+    ctx.textAlign = "right"
+    ctx.fillText("Lives: " + lives, canvas.width-5, 20)
 }
 
 function drawScore() {
-    ctx.font = "20px Arial";
-    ctx.fillStyle = "#FFFFFF";
-    ctx.textAlign = "left";
-    ctx.fillText("Score: " + score, 5 , 20);
+    ctx.font = "20px Arial"
+    ctx.fillStyle = "#FFFFFF"
+    ctx.textAlign = "left"
+    ctx.fillText("Score: " + score, 5 , 20)
 }
 
-const start = document.getElementById("start");
+const start = document.getElementById("start")
 const space = document.getElementById("space")
 const finalScore = document.getElementById("score")
-const restart = document.getElementById("restart");
+const restart = document.getElementById("restart")
 const looser = document.getElementById("lose")
 const winner = document.getElementById("win")
 const gameover = document.getElementById("gameover")
@@ -409,17 +409,17 @@ restart.addEventListener("click", function(){
 })
 
 function printWinner() {
-    gameover.style.display = "block";
-    winner.style.display = "block";
-    restart.style.display = "block";
+    gameover.style.display = "block"
+    winner.style.display = "block"
+    restart.style.display = "block"
     finalScore.style.display = "block"
     finalScore.innerHTML = "Score: " + score
 }
 
 function printLoser() {
     looser.style.display = "block"
-    gameover.style.display = "block";
-    restart.style.display = "block";
+    gameover.style.display = "block"
+    restart.style.display = "block"
     finalScore.style.display = "block"
     finalScore.innerHTML = "Score: " + score
 }
