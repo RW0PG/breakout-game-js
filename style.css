@@ -1,0 +1,52 @@
+#gameover{
+    position: absolute;
+    width : 610px;
+    height: 810px;
+    background: rgba(0,0,0,0.7);
+    display: none;
+}
+#restart{
+    position: relative;
+    top: 500px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 2.25em;
+    color : #FFF;
+}
+#win{
+    position: relative;
+    top: 300px;
+    text-align: center;
+    font-size: 2.25em;
+    color : white;
+    display: none;
+}
+#lose{
+    position: relative;
+    top: 300px;
+    text-align: center;
+    font-size: 2.25em;
+    color : white;
+    display: none;
+}
+#start {
+    position: absolute;
+    width : 610px;
+    height: 810px;
+    background: rgba(0,0,0,0.7);
+}
+#space {
+    position: relative;
+    top: 500px;
+    text-align: center;
+    font-size: 2.25em;
+    color : white;
+}
+#score {
+    position: relative;
+    top: 300px;
+    text-align: center;
+    font-size: 2.25em;
+    color : white;
+    display: none;
+}
