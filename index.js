@@ -199,9 +199,11 @@ brick = {
 }
 
 let bricks = []
+let bricks = []
+
 function createBricks() {
     for (let row = 0; row < brick.row; row++) {
-        bricks[row] = []
+        bricks[row] = [];
         for (let col = 0; col < brick.column; col++) {
             x = Math.floor((Math.random() * 10) + 1)
             if (level == 2 || level == 4) {
@@ -214,7 +216,9 @@ function createBricks() {
                 death_block: false,
                 destroyable: true
                 }
-            } else if (level == 3) {
+            } 
+            
+            else if (level == 3) {
                 bricks[row][col] = {
                     x: col * (brick.offset_between_bricks + brick.width) + brick.offset_between_bricks,
                     y: row * (brick.offset_top + brick.height) + brick.offset_top + brick.upper_margin,
@@ -223,12 +227,13 @@ function createBricks() {
                     death_block: false,
                     destroyable: true
                 }
-            if (row == 4 && (col == 1 || col == 2 || col == 4 )) {
-                bricks[row][col].destroyable = false
-            } else {
-                amount_of_blocks++
+
+                if (row == 4 && (col == 1 || col == 2 || col == 4 )) {
+                    bricks[row][col].destroyable = false
+                } else {
+                    amount_of_blocks++
+                }
             }
-        }
          
             else if (level == 5) {
             bricks[row][col] = {
@@ -239,35 +244,34 @@ function createBricks() {
                 death_block: false,
                 destroyable: true
             }
-            if (x % 7 == 0) {
-                bricks[row][col].death_block = true
+                if (x % 7 == 0) {
+                    bricks[row][col].death_block = true
+                }
+                else {
+                    amount_of_blocks++
+                }
             }
+
             else {
-                amount_of_blocks++
-            }
-        }
 
-        else {
-
-            if (x % 2 != 0) {
-                bricks[row][col] = {
-                    not_broken: false
+                if (x % 2 != 0) {
+                    bricks[row][col] = {
+                        not_broken: false
+                    }
+                } else {
+                    amount_of_blocks++
+                    bricks[row][col] = {
+                        x: col * (brick.offset_between_bricks + brick.width) + brick.offset_between_bricks,
+                        y: row * (brick.offset_top + brick.height) + brick.offset_top + brick.upper_margin,
+                        not_broken: true,
+                        color_of_brick: getRandomColor(),
+                        death_block: false,
+                        destroyable: true
+                    }
                 }
-            } else {
-                amount_of_blocks++
-                bricks[row][col] = {
-                    x: col * (brick.offset_between_bricks + brick.width) + brick.offset_between_bricks,
-                    y: row * (brick.offset_top + brick.height) + brick.offset_top + brick.upper_margin,
-                    not_broken: true,
-                    color_of_brick: getRandomColor(),
-                    death_block: false,
-                    destroyable: true
-                }
-            }
 
             }
         }
-
     }
 }
 
